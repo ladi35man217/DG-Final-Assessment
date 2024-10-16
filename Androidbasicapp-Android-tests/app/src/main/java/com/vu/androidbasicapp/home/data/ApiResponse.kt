@@ -11,9 +11,9 @@ data class ApiResponse(
 
 @JsonClass(generateAdapter = true)
 data class Entity(
-    @Json(name = "description") val description: String,
     @Json(name = "dishName") val dishName: String,
+    @Json(name = "origin") val origin: String,
     @Json(name = "mainIngredient") val mainIngredient: String,
     @Json(name = "mealType") val mealType: String,
-    @Json(name = "origin") val origin: String
-)
+    @Json(name = "description") val description: String
+    )
