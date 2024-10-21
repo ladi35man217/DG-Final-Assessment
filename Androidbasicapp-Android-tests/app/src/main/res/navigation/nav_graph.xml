@@ -21,7 +21,7 @@
         tools:layout="@layout/fragment_dashboard" >
         <argument
             android:name="detail"
-            app:argType="com.vu.androidbasicapp.home.data.ResponseItem" />
+            app:argType="com.vu.androidbasicapp.home.data.Entity" />
     </fragment>
     <fragment
         android:id="@+id/profileFragment"

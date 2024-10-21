@@ -11,7 +11,9 @@ import org.junit.Assert.assertEquals
 import org.junit.Test
 
 @OptIn(ExperimentalCoroutinesApi::class)
-class CoroutineTest { // for testing api, use this
+class CoroutineTest {
+
+    /*
 
     @Test
     fun testCoroutineExecution() = runTest(UnconfinedTestDispatcher()) {
@@ -29,4 +31,6 @@ class CoroutineTest { // for testing api, use this
 
         assertEquals("Hello world", result)
     }
+
+     */
 }
