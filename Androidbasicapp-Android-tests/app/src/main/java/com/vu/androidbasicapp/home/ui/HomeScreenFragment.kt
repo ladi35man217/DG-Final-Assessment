@@ -13,8 +13,8 @@ import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.vu.androidbasicapp.R
-import com.vu.androidbasicapp.home.data.ResponseItem
-import com.vu.androidbasicapp.home.ui.recyclerview.MyRecyclerViewAdapter
+import com.vu.androidbasicapp.home.data.ApiResponse
+import com.vu.androidbasicapp.home.ui.recyclerview.RecyclerViewAdapter
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -23,8 +23,8 @@ import kotlinx.coroutines.launch
 class HomeScreenFragment : Fragment() {
 
     private val viewModel: HomeScreenViewModel by viewModels()
-    private lateinit var navigationFunctionLambda: (ResponseItem) -> Unit
-    private lateinit var recyclerViewAdapter: MyRecyclerViewAdapter
+    private lateinit var navigationFunctionLambda: (Entity) -> Unit
+    private lateinit var recyclerViewAdapter: RecyclerViewAdapter
 
 
     override fun onCreateView(
@@ -39,7 +39,7 @@ class HomeScreenFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         navigationFunctionLambda = { findNavController().navigate(HomeScreenFragmentDirections.actionHomeScreenFragmentToDashboardFragment(detail = it)) }
-        recyclerViewAdapter = MyRecyclerViewAdapter(navigationFunction = navigationFunctionLambda)
+        recyclerViewAdapter = RecyclerViewAdapter(navigationFunction = navigationFunctionLambda)
 
         lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {

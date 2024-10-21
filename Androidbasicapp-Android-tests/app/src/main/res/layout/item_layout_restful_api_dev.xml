@@ -28,7 +28,7 @@
             tools:text="Name" />
 
         <TextView
-            android:id="@+id/itemIdText"
+            android:id="@+id/itemOriginText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -37,7 +37,7 @@
             android:textColor="#303F9F"
             app:layout_constraintStart_toStartOf="@id/itemNametext"
             app:layout_constraintTop_toBottomOf="@id/itemNametext"
-            tools:text="ID: 2" />
+            tools:text="Origin" />
 
         <TextView
             android:id="@+id/detailsText"
@@ -47,8 +47,8 @@
             android:text="@string/more_details_are_available"
             android:textAppearance="?attr/textAppearanceBodyMedium"
             android:textColor="#00796B"
-            app:layout_constraintStart_toStartOf="@id/itemIdText"
-            app:layout_constraintTop_toBottomOf="@id/itemIdText"
+            app:layout_constraintStart_toStartOf="@id/itemOriginText"
+            app:layout_constraintTop_toBottomOf="@id/itemOriginText"
             tools:text="More details are available" />
 
         <com.google.android.material.button.MaterialButton
@@ -63,6 +63,27 @@
             app:layout_constraintBottom_toBottomOf="@id/detailsText"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@id/detailsText" />
+
+        <TextView
+            android:id="@+id/itemIngredientText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="204dp"
+            android:text="Main Ingredient"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.169" />
+
+        <TextView
+            android:id="@+id/itemMealTypeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="Meal Type"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </com.google.android.material.card.MaterialCardView>

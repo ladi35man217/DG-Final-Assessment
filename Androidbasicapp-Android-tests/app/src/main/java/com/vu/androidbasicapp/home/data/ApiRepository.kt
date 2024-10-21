@@ -1,11 +1,13 @@
 package com.vu.androidbasicapp.home.data
 
+import android.telecom.Call
 import com.vu.androidbasicapp.home.network.ApiRetrofitClient
 import com.vu.androidbasicapp.home.network.ApiService
 import retrofit2.http.Body
+import javax.inject.Inject
 
 
-class ApiRepository(private val apiService: ApiService) {
+class ApiRepository @Inject constructor(private val apiService: ApiService) {
 
     suspend fun loginToApi (@Body request: ApiRequest) { // might need to fix
         return apiService.loginToApi(request)

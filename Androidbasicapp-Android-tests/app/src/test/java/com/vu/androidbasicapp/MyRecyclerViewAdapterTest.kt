@@ -1,7 +1,5 @@
 package com.vu.androidbasicapp
 
-import com.vu.androidbasicapp.home.data.ResponseItem
-import com.vu.androidbasicapp.home.ui.recyclerview.MyRecyclerViewAdapter
 import io.mockk.every
 import io.mockk.spyk
 import io.mockk.verify

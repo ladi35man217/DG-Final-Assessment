@@ -1,8 +1,6 @@
 package com.vu.androidbasicapp.home.ui
 
 import android.util.Log
-import com.vu.androidbasicapp.home.data.ResponseItem
-import com.vu.androidbasicapp.home.data.RestfulApiDevRepositoryClass
 import io.mockk.coEvery
 import io.mockk.every
 import io.mockk.mockk

@@ -5,21 +5,29 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.vu.androidbasicapp.R
-import com.vu.androidbasicapp.home.data.ResponseItem
+import com.vu.androidbasicapp.home.data.ApiResponse
+import com.vu.androidbasicapp.home.data.Entity
 
-class ResponseItemViewHolder(view: View,private val navigationFunction: (ResponseItem) -> Unit) : RecyclerView.ViewHolder(view) {
+class ApiResponseItemViewHolder(view: View, private val navigationFunction: (Entity) -> Unit) : RecyclerView.ViewHolder(view) {
 
     private val name: TextView = view.findViewById(R.id.itemNametext)
-    private val id: TextView = view.findViewById(R.id.itemIdText)
+    private val origin: TextView = view.findViewById(R.id.itemOriginText)
+    private val mainIngredient: TextView = view.findViewById(R.id.itemIngredientText)
+    private val mealType: TextView = view.findViewById(R.id.itemMealTypeText)
     private val details: TextView = view.findViewById(R.id.detailsText)
     private val button: Button = view.findViewById(R.id.navigationButton)
 
-    fun bind(item: ResponseItem) {
-        name.text = item.objectName
-        id.text = "Id: " + item.id
+
+    fun bind(item: Entity) {
+        name.text = item.dishName
+        origin.text = "Country of Origin: ${item.origin}"
+        mainIngredient.text = "Main Ingredient: ${item.mainIngredient}"
+        mealType.text = item.mealType
+
         val showDetails = if (item.dataSection.isNullOrEmpty()) View.INVISIBLE else View.VISIBLE
         details.visibility = showDetails
         button.visibility = showDetails
+
 
         if (showDetails == View.VISIBLE) {
             button.setOnClickListener {
@@ -27,4 +35,6 @@ class ResponseItemViewHolder(view: View,private val navigationFunction: (Respons
             }
         }
     }
+
+
 }

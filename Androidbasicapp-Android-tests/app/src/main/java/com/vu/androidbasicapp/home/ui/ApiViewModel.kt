@@ -5,8 +5,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.vu.androidbasicapp.home.data.ApiRepository
 import com.vu.androidbasicapp.home.data.ApiResponse
-import com.vu.androidbasicapp.home.data.Entity
-import com.vu.androidbasicapp.home.data.ResponseItem
 import com.vu.androidbasicapp.home.network.ApiRetrofitClient
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.delay
@@ -43,7 +41,7 @@ class ApiViewModel @Inject constructor(private val repository: ApiRepository) : 
      */
 
     val greetingText = MutableStateFlow("Hello Food")
-    val apiResponseObjects = MutableStateFlow<List<ApiResponse>>(listOf())
+    val apiResponseObjects = MutableStateFlow<List<Entity>>(listOf())
 
     init {
         Log.d("nit3213", "ApiVieModel ViewModel injected ")
