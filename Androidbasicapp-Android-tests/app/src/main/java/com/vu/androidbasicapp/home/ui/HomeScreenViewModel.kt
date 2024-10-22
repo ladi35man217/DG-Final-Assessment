@@ -4,6 +4,7 @@ import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.vu.androidbasicapp.home.data.AddObjectRequest
+import com.vu.androidbasicapp.home.data.ApiLoginRequest
 import com.vu.androidbasicapp.home.data.Entity
 import com.vu.androidbasicapp.home.data.FoodResponseItem
 import com.vu.androidbasicapp.home.data.RestfulApiDevRepositoryClass
@@ -21,16 +22,19 @@ class HomeScreenViewModel @Inject constructor(private val repository: RestfulApi
     val greetingText = MutableStateFlow("Hello Class")
     val apiResponseObjects = MutableStateFlow<List<Entity>>(listOf())
 
-
-    init {
-        Log.d("nit3213", "HomeScreenViewModel ViewModel injected ")
-
+    fun loginAndFetchData(loginRequest: ApiLoginRequest) {
         viewModelScope.launch {
-            val result : FoodResponseItem = repository.getAllObjectsData()
-            delay(1000)
-            updateGreetingTextState("Api has responded with the following items")
-            delay(1000)
-            apiResponseObjects.value = result.entities// change this to just result
+            try {
+                // Step 1: Log in and obtain keypass
+                val loginResponse = repository.loginToFoodApi(loginRequest)
+                updateGreetingTextState("Login Successful. Key: ${loginResponse.keypass}")
+
+                // Step 2: Fetch the data using the keypass
+                val result = repository.getAllObjectsData()
+                apiResponseObjects.value = result.entities
+            } catch (e: Exception) {
+                updateGreetingTextState("Login or API Request failed: ${e.message}")
+            }
         }
     }
 
@@ -38,3 +42,4 @@ class HomeScreenViewModel @Inject constructor(private val repository: RestfulApi
         greetingText.value = value
     }
 }
+

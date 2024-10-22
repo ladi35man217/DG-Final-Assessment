@@ -6,6 +6,7 @@ import com.vu.androidbasicapp.home.data.ApiLoginRequest
 import com.vu.androidbasicapp.home.data.Entity
 import com.vu.androidbasicapp.home.data.FoodResponseItem
 import com.vu.androidbasicapp.home.data.ResponseItem
+import com.vu.androidbasicapp.home.data.loginApiResponse
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.GET
@@ -28,11 +29,11 @@ interface RestfulApiDevService {
      */
 
     @POST("footscray/auth")
-    suspend fun loginToApi(@Body requestBody: ApiLoginRequest)
+    suspend fun loginToApi(@Body requestBody: ApiLoginRequest) : loginApiResponse
 
 
-    @GET("dashboard/food")
-    suspend fun getAllObjects(): FoodResponseItem
+    @GET("dashboard/{keypass}")
+    suspend fun getAllObjects(@Path("keypass") keypass: String): FoodResponseItem
 
 
 }

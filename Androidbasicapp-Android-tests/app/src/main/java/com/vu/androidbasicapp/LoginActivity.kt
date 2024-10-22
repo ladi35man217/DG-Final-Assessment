@@ -21,31 +21,18 @@ class LoginActivity : AppCompatActivity() {
             insets
         }
 
-
         val buttonPointer = findViewById<Button>(R.id.buttonLogin)
         buttonPointer.setOnClickListener {
 
-            /* Not sure how to pass username and password. need to figure out api config first
-
-            val usernameFinder = findViewById<TextView>(R.id.editTextUsername)
-            if(usernameFinder.text == "Daniel") {
-                Log.v("username", "go girl")
-            }
-
-            val passwordFinder = findViewById<TextView>(R.id.editTextPassword)
-            if(passwordFinder.text == "s4673382") {
-                Log.v("password", "yessir")
-            }
-
-             */
+            val username = findViewById<TextView>(R.id.editTextUsername).text.toString()
+            val password = findViewById<TextView>(R.id.editTextPassword).text.toString()
 
             val intent = Intent(this, MainActivity::class.java)
+            intent.putExtra("usernameKey", username)
+            intent.putExtra("passwordKey", password)
             startActivity(intent)
 
-
         }
-
-
 
     }
 }

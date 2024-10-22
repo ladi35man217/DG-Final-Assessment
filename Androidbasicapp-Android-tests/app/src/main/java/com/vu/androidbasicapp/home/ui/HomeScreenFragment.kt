@@ -13,6 +13,7 @@ import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.vu.androidbasicapp.R
+import com.vu.androidbasicapp.home.data.ApiLoginRequest
 import com.vu.androidbasicapp.home.data.Entity
 import com.vu.androidbasicapp.home.data.FoodResponseItem
 import com.vu.androidbasicapp.home.data.ResponseItem
@@ -83,6 +84,15 @@ class HomeScreenFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        val username = arguments?.getString("usernameKey")
+        val password = arguments?.getString("passwordKey")
+
+        // Example login credentials
+        val loginRequest = ApiLoginRequest(username.toString(), password.toString())
+
+        viewModel.loginAndFetchData(loginRequest)  // Trigger the login and data fetch
+
 
         navigationFunctionLambda = { findNavController().navigate(HomeScreenFragmentDirections.actionHomeScreenFragmentToDashboardFragment(detail = it)) }
         recyclerViewAdapter = MyRecyclerViewAdapter(navigationFunction = navigationFunctionLambda)

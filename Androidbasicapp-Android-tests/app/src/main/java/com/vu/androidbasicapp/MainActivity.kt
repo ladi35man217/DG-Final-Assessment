@@ -6,6 +6,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.vu.androidbasicapp.home.ui.HomeScreenFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -21,6 +22,23 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+
+        val username = intent.getStringExtra("usernameKey")
+        val password = intent.getStringExtra("passwordKey")
+
+        val fragment = HomeScreenFragment()
+        val bundle = Bundle().apply {
+            putString("usernameKey", username)
+            putString("passwordKey", password)
+        }
+        fragment.arguments = bundle
+
+        // Load the fragment with the arguments
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container, fragment)
+            .commit()
+
     }
 
     override fun onStart() {
