@@ -11,28 +11,6 @@ import com.vu.androidbasicapp.home.data.ResponseItem
 
 class ResponseItemViewHolder(view: View,private val navigationFunction: (Entity) -> Unit) : RecyclerView.ViewHolder(view) {
 
-    /*
-
-    private val name: TextView = view.findViewById(R.id.itemNametext)
-    private val id: TextView = view.findViewById(R.id.itemIdText)
-    private val details: TextView = view.findViewById(R.id.detailsText)
-    private val button: Button = view.findViewById(R.id.navigationButton)
-
-    fun bind(item: Entity) {
-        name.text = item.objectName
-        id.text = "Id: " + item.id
-        val showDetails = if (item.dataSection.isNullOrEmpty()) View.INVISIBLE else View.VISIBLE
-        details.visibility = showDetails
-        button.visibility = showDetails
-
-        if (showDetails == View.VISIBLE) {
-            button.setOnClickListener {
-                navigationFunction(item)
-            }
-        }
-    }
-
-     */
 
     private val name: TextView = view.findViewById(R.id.itemNametext)
     private val origin: TextView = view.findViewById(R.id.itemOriginText)
@@ -59,7 +37,6 @@ class ResponseItemViewHolder(view: View,private val navigationFunction: (Entity)
                 navigationFunction(item)
             }
         }
-
 
     }
 

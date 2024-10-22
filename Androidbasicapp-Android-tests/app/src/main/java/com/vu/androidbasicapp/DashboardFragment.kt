@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.navigation.NavArgs
 import androidx.navigation.fragment.navArgs
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -31,6 +30,11 @@ class DashboardFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        view.findViewById<TextView>(R.id.screenTitle).text = arguments.detail.toString()
+        view.findViewById<TextView>(R.id.dishNameTextView).text = arguments.detail.dishName
+        view.findViewById<TextView>(R.id.originTextView).text = arguments.detail.origin
+        view.findViewById<TextView>(R.id.mainIngredientTextView).text = arguments.detail.mainIngredient
+        view.findViewById<TextView>(R.id.mealTypeTextView).text = arguments.detail.mealType
+        view.findViewById<TextView>(R.id.mealDescriptView).text = arguments.detail.description
+
     }
 }

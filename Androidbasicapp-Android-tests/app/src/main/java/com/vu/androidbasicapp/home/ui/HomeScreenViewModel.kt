@@ -3,7 +3,6 @@ package com.vu.androidbasicapp.home.ui
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.vu.androidbasicapp.home.data.AddObjectRequest
 import com.vu.androidbasicapp.home.data.ApiLoginRequest
 import com.vu.androidbasicapp.home.data.Entity
 import com.vu.androidbasicapp.home.data.FoodResponseItem

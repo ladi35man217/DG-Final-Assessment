@@ -69,6 +69,26 @@ dependencies {
     androidTestImplementation("io.mockk:mockk-agent:1.13.12")
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    // Add these dependencies in your build.gradle (app level)
+    testImplementation("junit:junit:4.13.2")
+    testImplementation("org.mockito:mockito-core:4.2.0")
+    testImplementation("org.mockito:mockito-inline:4.2.0") // For mocking final classes
+    testImplementation("androidx.arch.core:core-testing:2.1.0") // For LiveData testing
+
+    // For JUnit
+    testImplementation("junit:junit:4.13.2")
+
+// For Mockito
+    testImplementation("org.mockito:mockito-core:4.0.0")
+
+// For Coroutines
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.0")
+    testImplementation("org.mockito.kotlin:mockito-kotlin:4.0.0") // Check for the latest version
+
+
+
+
+
 }
 
 // Allow references to generated code

@@ -23,9 +23,4 @@
             android:name="detail"
             app:argType="com.vu.androidbasicapp.home.data.Entity" />
     </fragment>
-    <fragment
-        android:id="@+id/profileFragment"
-        android:name="com.vu.androidbasicapp.ProfileFragment"
-        android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" />
 </navigation>

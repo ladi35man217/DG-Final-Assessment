@@ -23,7 +23,6 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-
         val username = intent.getStringExtra("usernameKey")
         val password = intent.getStringExtra("passwordKey")
 

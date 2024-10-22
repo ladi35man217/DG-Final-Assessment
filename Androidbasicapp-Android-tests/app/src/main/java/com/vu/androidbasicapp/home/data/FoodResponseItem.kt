@@ -11,7 +11,6 @@ data class FoodResponseItem(
 
 @Parcelize
 data class Entity(
-    @Json(name = "data") val dataSection: Map<String, String>?,
     @Json(name = "dishName") val dishName: String,
     @Json(name = "mainIngredient") val mainIngredient: String,
     @Json(name = "origin") val origin: String,
